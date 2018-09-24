@@ -48,6 +48,7 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-reflect")
     compile('org.slf4j:slf4j-api')
     compile('ch.qos.logback:logback-classic')
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
     compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
