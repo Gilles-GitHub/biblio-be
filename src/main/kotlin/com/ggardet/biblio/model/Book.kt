@@ -14,4 +14,6 @@ data class Book(@Id @JsonIgnore val id: Int,
                 val name: String,
                 val authorFirstName: String,
                 val authorLastName: String,
-                val publicationDate: LocalDate)
+                val genre: String,
+                val publicationDate: Int,
+                val addedDate: LocalDate)
