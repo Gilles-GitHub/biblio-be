@@ -1,171 +1,208 @@
-[{
-	"_id" : 1,
+/* 1 */
+{
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0b8"),
 	"authorFirstName" : "Victor",
 	"authorLastName" : "Hugo",
 	"name" : "Notre dame de Paris",
-	"addedDate" : ISODate("2015-03-01 11:59"),
+	"addedDate" : ISODate("2015-03-01T15:00:20.201Z"),
 	"genre" : "Roman historique",
-	"publicationDate" : 1831
-},
+	"publicationDate" : ISODate("1831-01-01T01:01:18.183Z")
+}
+
+/* 2 */
 {
-	"_id" : 2,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0b9"),
 	"authorFirstName" : "Boris",
 	"authorLastName" : "Vian",
 	"name" : "L'écume des jours",
-	"addedDate" : ISODate("2017-08-08 11:59"),
+	"addedDate" : ISODate("2017-08-08T20:07:20.201Z"),
 	"genre" : "Roman",
-	"publicationDate" : 1948
-},
+	"publicationDate" : ISODate("1948-01-01T01:01:19.194Z")
+}
+
+/* 3 */
 {
-	"_id" : 3,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0ba"),
 	"authorFirstName" : "Boris",
 	"authorLastName" : "Vian",
 	"name" : "J'irai cracher sur vos tombes",
-	"addedDate" : ISODate("2017-06-12 11:59"),
+	"addedDate" : ISODate("2017-06-12T18:11:20.201Z"),
 	"genre" : "Roman policier",
-	"publicationDate" : 1946
-},
+	"publicationDate" : ISODate("1946-01-01T01:01:19.194Z")
+}
+
+/* 4 */
 {
-	"_id" : 4,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0bb"),
 	"authorFirstName" : "Louis-Ferdinand",
 	"authorLastName" : "Céline",
 	"name" : "Voyage ou bout de la nuit",
-	"addedDate" : ISODate("2016-04-15 11:59"),
+	"addedDate" : ISODate("2016-04-15T16:14:20.201Z"),
 	"genre" : "Roman",
-	"publicationDate" : 1932
-},
+	"publicationDate" : ISODate("1932-01-01T01:01:19.193Z")
+}
+
+/* 5 */
 {
-	"_id" : 5,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0bc"),
 	"authorFirstName" : "Alexandre",
 	"authorLastName" : "Dumas",
 	"name" : "Le compte de Monte-Cristo",
-	"addedDate" : ISODate("2018-06-06 11:59"),
+	"addedDate" : ISODate("2018-06-06T18:05:20.201Z"),
 	"genre" : "Roman historique",
-	"publicationDate" : 1844
-},
+	"publicationDate" : ISODate("1844-01-01T01:01:18.184Z")
+}
+
+/* 6 */
 {
-	"_id" : 6,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0bd"),
 	"authorFirstName" : "J. D.",
 	"authorLastName" : "Salinger",
 	"name" : "L'attrape-coeurs",
-	"addedDate" : ISODate("2018-08-18 11:59"),
+	"addedDate" : ISODate("2018-08-18T20:17:20.201Z"),
 	"genre" : "Roman",
-	"publicationDate" : 1951
-},
+	"publicationDate" : ISODate("1951-01-01T01:01:19.195Z")
+}
+
+/* 7 */
 {
-	"_id" : 7,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0be"),
 	"authorFirstName" : "William",
 	"authorLastName" : "Golding",
 	"name" : "Sa Majesté des mouches",
-	"addedDate" : ISODate("2017-06-12 11:59"),
+	"addedDate" : ISODate("2017-06-12T18:11:20.201Z"),
 	"genre" : "Roman",
-	"publicationDate" : 1954
-},
+	"publicationDate" : ISODate("1954-01-01T01:01:19.195Z")
+}
+
+/* 8 */
 {
-	"_id" : 8,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0bf"),
 	"authorFirstName" : "Anthony",
 	"authorLastName" : "Burgess",
 	"name" : "L'orange mécanique",
-	"addedDate" : ISODate("2017-06-05 11:59"),
+	"addedDate" : ISODate("2017-06-05T18:04:20.201Z"),
 	"genre" : "Roman de science fiction",
-	"publicationDate" : 1962
-},
+	"publicationDate" : ISODate("1962-01-01T01:01:19.196Z")
+}
+
+/* 9 */
 {
-	"_id" : 9,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c0"),
 	"authorFirstName" : "Stephen",
 	"authorLastName" : "King",
 	"name" : "Ça",
-	"addedDate" : ISODate("2016-07-17 11:59"),
+	"addedDate" : ISODate("2016-07-17T19:16:20.201Z"),
 	"genre" : "Roman horreur",
-	"publicationDate" : 1990
-},
+	"publicationDate" : ISODate("1990-01-01T01:01:19.199Z")
+}
+
+/* 10 */
 {
-	"_id" : 10,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c1"),
 	"authorFirstName" : "Stephen",
 	"authorLastName" : "King",
 	"name" : "Shinning",
-	"addedDate" : ISODate("2017-11-13 11:59"),
+	"addedDate" : ISODate("2017-11-13T23:12:20.201Z"),
 	"genre" : "Roman horreur",
-	"publicationDate" : 1977
-},
+	"publicationDate" : ISODate("1977-01-01T01:01:19.197Z")
+}
+
+/* 11 */
 {
-	"_id" : 11,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c2"),
 	"authorFirstName" : "Hervé",
 	"authorLastName" : "Bazin",
 	"name" : "Vipère au poing",
-	"addedDate" : ISODate("2011-10-11 11:59"),
+	"addedDate" : ISODate("2011-10-11T22:10:20.201Z"),
 	"genre" : "Roman autobiographique",
-	"publicationDate" : 1948
-},
+	"publicationDate" : ISODate("1948-01-01T01:01:19.194Z")
+}
+
+/* 12 */
 {
-	"_id" : 12,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c3"),
 	"authorFirstName" : "Romain",
 	"authorLastName" : "Gary",
 	"name" : "La promesse de l'ombre",
-	"addedDate" : ISODate("2014-05-28 11:59"),
+	"addedDate" : ISODate("2014-05-28T17:27:20.201Z"),
 	"genre" : "Roman autobiographique",
-	"publicationDate" : 1960
-},
+	"publicationDate" : ISODate("1960-01-01T01:01:19.196Z")
+}
+
+/* 13 */
 {
-	"_id" : 13,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c4"),
 	"authorFirstName" : "Alphonse",
 	"authorLastName" : "Daudet",
 	"name" : "Le petit chose",
-	"addedDate" : ISODate("2011-03-21 11:59"),
+	"addedDate" : ISODate("2011-03-21T15:20:20.201Z"),
 	"genre" : "Roman autobiographique",
-	"publicationDate" : 1868
-},
+	"publicationDate" : ISODate("1868-01-01T01:01:18.186Z")
+}
+
+/* 14 */
 {
-	"_id" : 14,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c5"),
 	"authorFirstName" : "George",
 	"authorLastName" : "Sand",
 	"name" : "La marre au diable",
-	"addedDate" : ISODate("2012-09-10 11:59"),
+	"addedDate" : ISODate("2012-09-10T21:09:20.201Z"),
 	"genre" : "Roman autobiographique",
-	"publicationDate" : 1846
-},
+	"publicationDate" : ISODate("1846-01-01T01:01:18.184Z")
+}
+
+/* 15 */
 {
-	"_id" : 15,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c6"),
 	"authorFirstName" : "Charles",
 	"authorLastName" : "Baudelaire",
 	"name" : "Les fleurs du mal",
-	"addedDate" : ISODate("2016-01-10 11:59"),
+	"addedDate" : ISODate("2016-01-10T13:09:20.201Z"),
 	"genre" : "Recueil de poêmes",
-	"publicationDate" : 1857
-},
+	"publicationDate" : ISODate("1857-01-01T01:01:18.185Z")
+}
+
+/* 16 */
 {
-	"_id" : 16,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c7"),
 	"authorFirstName" : "Nicolas",
 	"authorLastName" : "Gogol",
 	"name" : "Journal d'un fou",
-	"addedDate" : ISODate("2015-04-16 11:59"),
+	"addedDate" : ISODate("2015-04-16T16:15:20.201Z"),
 	"genre" : "Nouvelle",
-	"publicationDate" : 1835
-},
+	"publicationDate" : ISODate("1835-01-01T01:01:18.183Z")
+}
+
+/* 17 */
 {
-	"_id" : 17,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c8"),
 	"authorFirstName" : "Fedor",
 	"authorLastName" : "Dostoïevski",
 	"name" : "Les frères Karamazov",
-	"addedDate" : ISODate("2013-02-10 11:59"),
+	"addedDate" : ISODate("2013-02-10T14:09:20.201Z"),
 	"genre" : "Nouvelle",
-	"publicationDate" : 1879
-},
+	"publicationDate" : ISODate("1879-01-01T01:01:18.187Z")
+}
+
+/* 18 */
 {
-	"_id" : 18,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c9"),
 	"authorFirstName" : "Guy",
 	"authorLastName" : "De Maupassant",
 	"name" : "Boule de suif",
-	"addedDate" : ISODate("2017-05-17 11:59"),
+	"addedDate" : ISODate("2017-05-17T17:16:20.201Z"),
 	"genre" : "Nouvelle",
-	"publicationDate" : 1880
-},
+	"publicationDate" : ISODate("1880-01-01T01:01:18.188Z")
+}
+
+/* 19 */
 {
-	"_id" : 19,
+	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0ca"),
 	"authorFirstName" : "Gustave",
 	"authorLastName" : "Flaubert",
 	"name" : "Madame Bovary",
-	"addedDate" : ISODate("2017-03-19 11:59"),
+	"addedDate" : ISODate("2017-03-19T15:18:20.201Z"),
 	"genre" : "Roman",
-	"publicationDate" : 1857
-}]
+	"publicationDate" : ISODate("1857-01-01T01:01:18.185Z")
+}
