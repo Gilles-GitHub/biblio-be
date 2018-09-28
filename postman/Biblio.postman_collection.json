@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "5596b43f-2cd3-4149-812e-39f6f0186dc2",
+		"name": "Biblio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET all books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"authorFirstName\" : \"dfgdfg\",\r\n    \"authorLastName\" : \"Hudfgdfggo\",\r\n    \"name\" : \"Notre dame de Paris\",\r\n    \"addedDate\" : \"2015-03-01T15:00:20.201Z\",\r\n    \"genre\" : \"Roman historique\",\r\n    \"publicationDate\" : \"1831-01-01T01:01:18.183Z\"\r\n}"
+				},
+				"url": "{{url}}/biblio/books"
+			},
+			"response": []
+		},
+		{
+			"name": "GET a book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": "{{url}}/biblio/books/5bad2b6c6ae2e06819e5b0b8"
+			},
+			"response": []
+		}
+	]
+}
