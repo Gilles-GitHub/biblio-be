@@ -1,4 +1,3 @@
-/* 1 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0b8"),
 	"authorFirstName" : "Victor",
@@ -9,7 +8,6 @@
 	"publicationDate" : ISODate("1831-01-01T01:01:18.183Z")
 }
 
-/* 2 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0b9"),
 	"authorFirstName" : "Boris",
@@ -20,7 +18,6 @@
 	"publicationDate" : ISODate("1948-01-01T01:01:19.194Z")
 }
 
-/* 3 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0ba"),
 	"authorFirstName" : "Boris",
@@ -31,7 +28,6 @@
 	"publicationDate" : ISODate("1946-01-01T01:01:19.194Z")
 }
 
-/* 4 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0bb"),
 	"authorFirstName" : "Louis-Ferdinand",
@@ -42,7 +38,6 @@
 	"publicationDate" : ISODate("1932-01-01T01:01:19.193Z")
 }
 
-/* 5 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0bc"),
 	"authorFirstName" : "Alexandre",
@@ -53,7 +48,6 @@
 	"publicationDate" : ISODate("1844-01-01T01:01:18.184Z")
 }
 
-/* 6 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0bd"),
 	"authorFirstName" : "J. D.",
@@ -64,7 +58,6 @@
 	"publicationDate" : ISODate("1951-01-01T01:01:19.195Z")
 }
 
-/* 7 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0be"),
 	"authorFirstName" : "William",
@@ -75,7 +68,6 @@
 	"publicationDate" : ISODate("1954-01-01T01:01:19.195Z")
 }
 
-/* 8 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0bf"),
 	"authorFirstName" : "Anthony",
@@ -86,7 +78,6 @@
 	"publicationDate" : ISODate("1962-01-01T01:01:19.196Z")
 }
 
-/* 9 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c0"),
 	"authorFirstName" : "Stephen",
@@ -97,7 +88,6 @@
 	"publicationDate" : ISODate("1990-01-01T01:01:19.199Z")
 }
 
-/* 10 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c1"),
 	"authorFirstName" : "Stephen",
@@ -108,7 +98,6 @@
 	"publicationDate" : ISODate("1977-01-01T01:01:19.197Z")
 }
 
-/* 11 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c2"),
 	"authorFirstName" : "Hervé",
@@ -119,7 +108,6 @@
 	"publicationDate" : ISODate("1948-01-01T01:01:19.194Z")
 }
 
-/* 12 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c3"),
 	"authorFirstName" : "Romain",
@@ -130,7 +118,6 @@
 	"publicationDate" : ISODate("1960-01-01T01:01:19.196Z")
 }
 
-/* 13 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c4"),
 	"authorFirstName" : "Alphonse",
@@ -141,7 +128,6 @@
 	"publicationDate" : ISODate("1868-01-01T01:01:18.186Z")
 }
 
-/* 14 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c5"),
 	"authorFirstName" : "George",
@@ -152,7 +138,6 @@
 	"publicationDate" : ISODate("1846-01-01T01:01:18.184Z")
 }
 
-/* 15 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c6"),
 	"authorFirstName" : "Charles",
@@ -163,7 +148,6 @@
 	"publicationDate" : ISODate("1857-01-01T01:01:18.185Z")
 }
 
-/* 16 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c7"),
 	"authorFirstName" : "Nicolas",
@@ -174,7 +158,6 @@
 	"publicationDate" : ISODate("1835-01-01T01:01:18.183Z")
 }
 
-/* 17 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c8"),
 	"authorFirstName" : "Fedor",
@@ -185,7 +168,6 @@
 	"publicationDate" : ISODate("1879-01-01T01:01:18.187Z")
 }
 
-/* 18 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0c9"),
 	"authorFirstName" : "Guy",
@@ -196,7 +178,6 @@
 	"publicationDate" : ISODate("1880-01-01T01:01:18.188Z")
 }
 
-/* 19 */
 {
 	"_id" : ObjectId("5bad2b6c6ae2e06819e5b0ca"),
 	"authorFirstName" : "Gustave",

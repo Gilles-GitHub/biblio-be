@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 
 @Configuration
-@EnableMongoRepositories(basePackages = ["com.ggardet.biblio.repository"])
+@EnableMongoRepositories(basePackages = ["com.ggardet.biblio"])
 @PropertySource("classpath:mongo.properties")
 class MongoConfig : AbstractMongoConfiguration() {
 
