@@ -2,7 +2,7 @@ package com.ggardet.biblio.repository
 
 import com.ggardet.biblio.model.Book
 import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.data.rest.core.annotation.RepositoryRestResource
 
-interface BooksRepository : MongoRepository<Book, String> {
-    override fun findAll(): List<Book>
-}
+@RepositoryRestResource(collectionResourceRel = "books", path = "books")
+interface BooksRepository : MongoRepository<Book, String>
