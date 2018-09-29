@@ -1,35 +1,81 @@
 {
 	"info": {
-		"_postman_id": "5596b43f-2cd3-4149-812e-39f6f0186dc2",
+		"_postman_id": "6656e9c2-039c-4dde-b6bd-2b758ffec7d7",
 		"name": "Biblio",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "GET all books",
+			"name": "Book list",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
-						"key": "Content-Type",
+						"key": "Accept",
 						"value": "application/json"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"authorFirstName\" : \"dfgdfg\",\r\n    \"authorLastName\" : \"Hudfgdfggo\",\r\n    \"name\" : \"Notre dame de Paris\",\r\n    \"addedDate\" : \"2015-03-01T15:00:20.201Z\",\r\n    \"genre\" : \"Roman historique\",\r\n    \"publicationDate\" : \"1831-01-01T01:01:18.183Z\"\r\n}"
-				},
-				"url": "{{url}}/biblio/books"
+				"body": {},
+				"url": {
+					"raw": "{{url}}/biblio/books",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"biblio",
+						"books"
+					]
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "GET a book",
+			"name": "Book from id",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {},
-				"url": "{{url}}/biblio/books/5bad2b6c6ae2e06819e5b0b8"
+				"url": {
+					"raw": "{{url}}/biblio/books/5bad2b6c6ae2e06819e5b0c7",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"biblio",
+						"books",
+						"5bad2b6c6ae2e06819e5b0c7"
+					]
+				}
 			},
 			"response": []
 		}
