@@ -6,6 +6,8 @@ import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.hateoas.mvc.ControllerLinkBuilder
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
@@ -21,15 +23,23 @@ class BookController(var booksRepository: BooksRepository) {
             value = "Finds all the books of the collection",
             notes = "Multiple status values can be provided with comma seperated strings")
     @GetMapping("/books")
-    fun getBooks(): List<Book> {
+    fun getBooks(): ResponseEntity<List<Book>> {
         logger.info("Provide all books")
-        return booksRepository.findAll()
+        var response: List<Book> = booksRepository.findAll()
+        // add hateoas links for every book of the collection (get one)
+        response.forEach { book -> book.add(ControllerLinkBuilder.linkTo(ControllerLinkBuilder.methodOn(BookController::class.java).getBook(book.id)).withSelfRel()) }
+
+        return ResponseEntity.ok(response)
     }
 
+
+    @ApiOperation(
+            value = "Finds the book from its code identifier")
     @GetMapping("/books/{id}")
-    fun getBook(@PathVariable("id") id: String): Optional<Book> {
+    fun getBook(@PathVariable("id") id: String): ResponseEntity<Optional<Book>> {
         logger.info("Provide a book")
-        return booksRepository.findById(id)
+
+        return ResponseEntity.ok(booksRepository.findById(id))
     }
 
 }
