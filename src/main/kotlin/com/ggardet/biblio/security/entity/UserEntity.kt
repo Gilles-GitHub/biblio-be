@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.data.annotation.Id as DocumentId
 
 @Document(collection = "user")
-data class User (@DocumentId @JsonProperty("_id") val id: String?,
-                 @JsonProperty("username") private val username: String,
-                 @JsonProperty("password") private val password: String) : UserDetails {
+data class UserEntity (@DocumentId @JsonProperty("_id") val id: String?,
+                       @JsonProperty("username") private val username: String,
+                       @JsonProperty("password") private val password: String) : UserDetails {
 
     override fun getUsername(): String = username
 
