@@ -1,4 +1,4 @@
-package com.ggardet.biblio.model
+package com.ggardet.biblio.entity
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty

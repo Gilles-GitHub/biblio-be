@@ -1,6 +1,6 @@
 package com.ggardet.biblio.controller
 
-import com.ggardet.biblio.model.Book
+import com.ggardet.biblio.entity.Book
 import com.ggardet.biblio.repository.BooksRepository
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
@@ -27,6 +27,7 @@ class BookController(var booksRepository: BooksRepository) {
         logger.info("Provide all books")
         var response: List<Book> = booksRepository.findAll()
         // add hateoas links for every book of the collection (get one)
+        response.forEach { book -> book.add(ControllerLinkBuilder.linkTo(ControllerLinkBuilder.methodOn(BookController::class.java).getBook(book.id)).withRel("book")) }
         response.forEach { book -> book.add(ControllerLinkBuilder.linkTo(ControllerLinkBuilder.methodOn(BookController::class.java).getBook(book.id)).withSelfRel()) }
 
         return ResponseEntity.ok(response)
@@ -38,8 +39,10 @@ class BookController(var booksRepository: BooksRepository) {
     @GetMapping("/books/{id}")
     fun getBook(@PathVariable("id") id: String): ResponseEntity<Optional<Book>> {
         logger.info("Provide a book")
+        var book: Optional<Book> = booksRepository.findById(id)
+        book.get().add(ControllerLinkBuilder.linkTo(ControllerLinkBuilder.methodOn(BookController::class.java).getBook(book.get().id)).withRel("book"))
 
-        return ResponseEntity.ok(booksRepository.findById(id))
+        return ResponseEntity.ok(book)
     }
 
 }

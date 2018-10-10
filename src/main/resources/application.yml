@@ -9,4 +9,3 @@ spring:
 server:
   servlet:
     contextPath: /biblio
-

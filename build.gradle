@@ -5,13 +5,13 @@ buildscript {
         swaggerVersion = '2.0.5.RELEASE'
     }
     repositories {
-        mavenCentral()
         jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
@@ -38,17 +38,17 @@ compileTestKotlin {
 }
 
 repositories {
-    mavenCentral()
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
     compile('com.beust:klaxon:3.0.8')
-    compile('io.springfox:springfox-swagger2:2.9.2')
     compile('io.springfox:springfox-swagger-ui:2.9.2')
+    compile('io.springfox:springfox-swagger2:2.9.2')
     compile('org.codehaus.jackson:jackson-core-asl:1.1.0')
-    compile('org.jetbrains.kotlin:kotlin-stdlib-jdk8')
     compile('org.jetbrains.kotlin:kotlin-reflect')
+    compile('org.jetbrains.kotlin:kotlin-stdlib-jdk8')
     compile('org.slf4j:slf4j-api')
     compile('org.springframework.boot:spring-boot-starter-data-mongodb')
     compile('org.springframework.boot:spring-boot-starter-data-rest')
