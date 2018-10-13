@@ -5,13 +5,12 @@ import org.springframework.lang.NonNull
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider
 import org.springframework.security.core.userdetails.UserDetails
-import org.springframework.stereotype.Component
 import org.springframework.security.core.userdetails.UsernameNotFoundException
+import org.springframework.stereotype.Component
 
-
-
-
-
+/**
+ * The TokenAuthenticationProvider is responsible of finding the user by it’s authentication token.
+ */
 @Component
 class TokenAuthenticationProvider : AbstractUserDetailsAuthenticationProvider {
 
@@ -26,10 +25,9 @@ class TokenAuthenticationProvider : AbstractUserDetailsAuthenticationProvider {
 
     override fun retrieveUser(username: String?, usernamePasswordAuthenticationToken: UsernamePasswordAuthenticationToken?): UserDetails {
         val credentials = usernamePasswordAuthenticationToken?.credentials
-        val token: String? = 
+        val token: Any? = credentials
 
-                // TODO : to be finished
-        return token? as? String
+        return userAuthenticationService?.findByToken(token as String)?: throw UsernameNotFoundException("Cannot find user with authentication token=$token")
     }
 
     override fun additionalAuthenticationChecks(userDetails: UserDetails?, authentication: UsernamePasswordAuthenticationToken?) {
