@@ -1,21 +1,35 @@
 package com.ggardet.biblio.exception
 
+import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.HttpMediaTypeNotSupportedException
+import org.springframework.http.converter.HttpMessageNotWritableException
+import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
+import org.springframework.web.bind.annotation.ResponseStatus
+import org.springframework.web.context.request.WebRequest
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler
 
+
 @ControllerAdvice
-class ExceptionHandler : ResponseEntityExceptionHandler()
+class ExceptionHandler : ResponseEntityExceptionHandler() {
 
-@ExceptionHandler(Exception::class)
-fun processError(e: Exception): ResponseEntity<Any> {
-    return ResponseEntity(e, HttpStatus.INTERNAL_SERVER_ERROR)
-}
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(Exception::class)
+    fun processError(ex: Exception): ResponseEntity<Any> {
+        return ResponseEntity(ex, HttpStatus.INTERNAL_SERVER_ERROR)
+    }
 
-@ExceptionHandler(HttpMediaTypeNotSupportedException::class)
-fun processError(e: HttpMediaTypeNotSupportedException): ResponseEntity<Any> {
-    return ResponseEntity(e, HttpStatus.UNSUPPORTED_MEDIA_TYPE)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(UsernameNotFoundException::class)
+    fun handleUsernameNotFoundException(ex: UsernameNotFoundException): ResponseEntity<Any> {
+        return ResponseEntity(ex, HttpStatus.UNAUTHORIZED)
+    }
+
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    override fun handleHttpMessageNotWritable(ex: HttpMessageNotWritableException, headers: HttpHeaders, status: HttpStatus, request: WebRequest): ResponseEntity<Any> {
+        return ResponseEntity(ex, HttpStatus.INTERNAL_SERVER_ERROR)
+    }
+
 }

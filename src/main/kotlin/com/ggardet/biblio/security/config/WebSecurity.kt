@@ -1,5 +1,6 @@
 package com.ggardet.biblio.security.config
 
+import com.ggardet.biblio.config.YAMLConfig
 import com.ggardet.biblio.security.filter.JWTAuthenticationFilter
 import com.ggardet.biblio.security.filter.JWTAuthorizationFilter
 import org.springframework.context.annotation.Bean
@@ -12,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 
 @EnableWebSecurity
-class WebSecurity(val userDetailsService: UserDetailsService) : WebSecurityConfigurerAdapter() {
+class WebSecurity(private val userDetailsServiceImpl: UserDetailsService, private val yamlConfig: YAMLConfig) : WebSecurityConfigurerAdapter() {
 
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
@@ -20,13 +21,13 @@ class WebSecurity(val userDetailsService: UserDetailsService) : WebSecurityConfi
                 .antMatchers(HttpMethod.POST, "/users/sign-up").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .addFilter(JWTAuthenticationFilter(authenticationManager()))
-                .addFilter(JWTAuthorizationFilter(authenticationManager()))
+                .addFilter(JWTAuthenticationFilter(authenticationManager(), yamlConfig))
+                .addFilter(JWTAuthorizationFilter(authenticationManager(), yamlConfig))
     }
 
     @Throws(Exception::class)
     public override fun configure(auth: AuthenticationManagerBuilder?) {
-        auth!!.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder())
+        auth!!.userDetailsService(userDetailsServiceImpl).passwordEncoder(bCryptPasswordEncoder())
     }
 
     @Bean

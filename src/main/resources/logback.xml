@@ -1,16 +1,23 @@
 <configuration>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="CONSOLEAPPENDER" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
     </appender>
 
-    <logger name="org.mongodb.driver.cluster" level="info">
-        <appender-ref ref="STDOUT" />
+    <logger name="org.mongodb.driver.cluster" level="INFO">
+        <appender-ref ref="CONSOLEAPPENDER" />
     </logger>
 
+    <logger name="org.springframework.boot" level="DEBUG">
+        <appender-ref ref="CONSOLEAPPENDER" />
+    </logger>
 
-    <root level="info">
-        <appender-ref ref="STDOUT" />
+    <root level="INFO">
+        <appender-ref ref="CONSOLEAPPENDER" />
     </root>
 </configuration>

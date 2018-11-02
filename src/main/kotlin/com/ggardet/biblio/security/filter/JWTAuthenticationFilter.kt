@@ -1,6 +1,7 @@
 package com.ggardet.biblio.security.filter
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.ggardet.biblio.config.YAMLConfig
 import com.ggardet.biblio.security.entity.ApplicationUserEntity
 import io.jsonwebtoken.Jwts
 import org.springframework.security.authentication.AuthenticationManager
@@ -17,15 +18,19 @@ import javax.servlet.ServletException
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
+class JWTAuthenticationFilter(authManager: AuthenticationManager, private val yamlConfig: YAMLConfig) : UsernamePasswordAuthenticationFilter() {
 
-class JWTAuthenticationFilter(authManager: AuthenticationManager) : UsernamePasswordAuthenticationFilter() {
+    init {
+        authenticationManager = authManager
+    }
 
     @Throws(AuthenticationException::class)
     override fun attemptAuthentication(req: HttpServletRequest,
                                        res: HttpServletResponse): Authentication {
         try {
             val creds = ObjectMapper()
-                    .readValue(req.getInputStream(), ApplicationUserEntity::class.java)
+                    .readValue(req.inputStream, ApplicationUserEntity::class.java)
+
             return authenticationManager.authenticate(
                     UsernamePasswordAuthenticationToken(
                             creds.username,
@@ -45,11 +50,11 @@ class JWTAuthenticationFilter(authManager: AuthenticationManager) : UsernamePass
                                                     auth: Authentication) {
 
         val token = Jwts.builder()
-                .setSubject((auth.getPrincipal() as User).getUsername())
+                .setSubject((auth.principal as User).username)
                 .setExpiration(Date(System.currentTimeMillis() + 864_000_000))
-                .signWith(io.jsonwebtoken.SignatureAlgorithm.HS512, "SecretKeyToGenJWTs")
+                .signWith(io.jsonwebtoken.SignatureAlgorithm.HS512, yamlConfig.secret)
                 .compact()
-        res.addHeader("Authorization", "Bearer " + token)
+        res.addHeader(yamlConfig.access_token, token)
     }
 
 }

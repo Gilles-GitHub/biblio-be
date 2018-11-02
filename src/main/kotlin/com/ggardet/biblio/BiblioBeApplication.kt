@@ -4,8 +4,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class BiblioBeApplication
+class BiblioBeApplication {
 
-fun main(args: Array<String>) {
-    runApplication<BiblioBeApplication>(*args)
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            runApplication<BiblioBeApplication>(*args)
+        }
+    }
+
 }

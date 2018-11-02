@@ -1,6 +1,8 @@
 package com.ggardet.biblio.security.filter
 
+import com.ggardet.biblio.config.YAMLConfig
 import io.jsonwebtoken.Jwts
+import org.apache.commons.lang3.StringUtils
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.GrantedAuthority
@@ -14,14 +16,14 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 
-class JWTAuthorizationFilter(authManager: AuthenticationManager) : BasicAuthenticationFilter(authManager) {
+class JWTAuthorizationFilter(authManager: AuthenticationManager, private val yamlConfig: YAMLConfig) : BasicAuthenticationFilter(authManager) {
 
     @Throws(IOException::class, ServletException::class)
         override fun doFilterInternal(req: HttpServletRequest,
                                             res: HttpServletResponse,
                                             chain: FilterChain) {
-        val header = req.getHeader("Authorization")
-        if (header == null || !header!!.startsWith("Bearer ")) {
+        val header = req.getHeader(yamlConfig.authorization)
+        if (header == null || !header.startsWith(yamlConfig.bearer + StringUtils.SPACE)) {
             chain.doFilter(req, res)
             return
         }
@@ -31,12 +33,12 @@ class JWTAuthorizationFilter(authManager: AuthenticationManager) : BasicAuthenti
     }
 
     private fun getAuthentication(request: HttpServletRequest): UsernamePasswordAuthenticationToken? {
-        val token = request.getHeader("Authorization")
+        val token = request.getHeader(yamlConfig.authorization)
         if (token != null) {
             // parse the token.
             val user = Jwts.parser()
-                    .setSigningKey("SecretKeyToGenJWTs")
-                    .parseClaimsJws(token!!.replace("Bearer ", ""))
+                    .setSigningKey(yamlConfig.secret)
+                    .parseClaimsJws(token.replace(yamlConfig.bearer + StringUtils.SPACE, StringUtils.EMPTY))
                     .body
                     .subject
             return if (user != null) {
