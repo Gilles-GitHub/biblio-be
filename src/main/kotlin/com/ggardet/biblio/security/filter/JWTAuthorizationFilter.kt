@@ -34,17 +34,15 @@ class JWTAuthorizationFilter(authManager: AuthenticationManager, private val yam
 
     private fun getAuthentication(request: HttpServletRequest): UsernamePasswordAuthenticationToken? {
         val token = request.getHeader(yamlConfig.authorization)
-        if (token != null) {
-            // parse the token.
-            val user = Jwts.parser()
+        val user = token?.let {
+            Jwts.parser()
                     .setSigningKey(yamlConfig.secret)
                     .parseClaimsJws(token.replace(yamlConfig.bearer + StringUtils.SPACE, StringUtils.EMPTY))
                     .body
                     .subject
-            return if (user != null) {
-                UsernamePasswordAuthenticationToken(user, null, ArrayList<GrantedAuthority>())
-            } else null
         }
-        return null
+
+        return user?.let { UsernamePasswordAuthenticationToken(user, null, ArrayList<GrantedAuthority>()) }
     }
+
 }

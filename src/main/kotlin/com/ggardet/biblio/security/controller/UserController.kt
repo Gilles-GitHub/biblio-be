@@ -18,12 +18,12 @@ class UserController(private val applicationUserRepository: ApplicationUserRepos
 
     @PostMapping("/sign-up")
     fun signUp(@RequestBody user: ApplicationUserEntity): ResponseEntity<Void> {
-        if (applicationUserRepository.existsByUsername(user.username)) {
-            return ResponseEntity<Void>(HttpStatus.BAD_REQUEST)
+        return if (applicationUserRepository.existsByUsername(user.username)) {
+            ResponseEntity(HttpStatus.CONFLICT)
         } else {
             user.password = bCryptPasswordEncoder.encode(user.password)
             applicationUserRepository.save(user)
-            return ResponseEntity<Void>(HttpStatus.OK)
+            ResponseEntity(HttpStatus.OK)
         }
     }
 

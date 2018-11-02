@@ -1,27 +1,32 @@
 package com.ggardet.biblio.config
 
 import com.mongodb.MongoClient
-import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.context.annotation.PropertySource
 import org.springframework.core.env.Environment
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration
+import org.springframework.data.mongodb.core.convert.MappingMongoConverter
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 
 @Configuration
-@EnableMongoRepositories(basePackages = ["com.ggardet.biblio"])
-@PropertySource("classpath:mongo.properties")
-class MongoConfig : AbstractMongoConfiguration() {
-
-    @Autowired
-    private val env: Environment? = null
+@EnableMongoRepositories(basePackages = ["com.ggardet.biblio.repository", "com.ggardet.biblio.security.repository"])
+class MongoConfig(private val environment: Environment) : AbstractMongoConfiguration() {
 
     override fun getDatabaseName(): String {
-        return env!!.getProperty("mongo.database").orEmpty()
+        return environment.getProperty("spring.data.mongodb.database").orEmpty()
     }
 
     override fun mongoClient(): MongoClient {
-        return MongoClient(env!!.getProperty("mongo.host"), Integer.parseInt(env.getProperty("mongo.port")!!))
+        return MongoClient(environment.getProperty("spring.data.mongodb.host"), Integer.parseInt(environment.getProperty("spring.data.mongodb.port")!!))
+    }
+
+    @Bean
+    @Throws(Exception::class)
+    override fun mappingMongoConverter(): MappingMongoConverter {
+        val mappingMongoConverter = super.mappingMongoConverter()
+        mappingMongoConverter.typeMapper = null
+
+        return mappingMongoConverter
     }
 
 }
