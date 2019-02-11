@@ -54,7 +54,7 @@ class JWTAuthenticationFilter(authManager: AuthenticationManager, private val ya
                 .setExpiration(Date(System.currentTimeMillis() + 3_600_000))
                 .signWith(io.jsonwebtoken.SignatureAlgorithm.HS512, yamlConfig.secret)
                 .compact()
-        res.addHeader(yamlConfig.access_token, token)
+        res.addHeader(yamlConfig.accessToken, token)
     }
 
 }

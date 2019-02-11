@@ -1,16 +1,18 @@
 package com.ggardet.biblio.config
 
 import org.springframework.boot.context.properties.ConfigurationProperties
-import org.springframework.context.annotation.Configuration
+import org.springframework.boot.context.properties.EnableConfigurationProperties
+import org.springframework.stereotype.Component
 import javax.validation.constraints.NotNull
 
-@Configuration
+@Component
+@EnableConfigurationProperties
 @ConfigurationProperties(prefix = "application")
-class YAMLConfig {
+open class YAMLConfig {
 
     @NotNull lateinit var secret: String
     @NotNull lateinit var authorization: String
-    @NotNull lateinit var access_token: String
+    @NotNull lateinit var accessToken: String
     @NotNull lateinit var bearer: String
 
 }

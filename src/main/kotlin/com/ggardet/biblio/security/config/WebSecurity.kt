@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 
 @EnableWebSecurity
-class WebSecurity(private val userDetailsServiceImpl: UserDetailsService, private val yamlConfig: YAMLConfig) : WebSecurityConfigurerAdapter() {
+open class WebSecurity(private val userDetailsServiceImpl: UserDetailsService, private val yamlConfig: YAMLConfig) : WebSecurityConfigurerAdapter() {
 
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {

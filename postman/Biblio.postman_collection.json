@@ -30,7 +30,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"authorFirstName\" : \"dfgdfg\",\r\n    \"authorLastName\" : \"Hudfgdfggo\",\r\n    \"name\" : \"Notre dame de Paris\",\r\n    \"addedDate\" : \"2015-03-01T15:00:20.201Z\",\r\n    \"genre\" : \"Roman historique\",\r\n    \"publicationDate\" : \"1831-01-01T01:01:18.183Z\"\r\n}"
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{url}}/biblio/books",
@@ -65,7 +65,10 @@
 								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{url}}/biblio/books/5bad2b6c6ae2e06819e5b0b8",
 							"host": [
@@ -99,7 +102,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"password\"\r\n}"
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"pouet\"\r\n}"
 						},
 						"url": {
 							"raw": "{{url}}/biblio/users/sign-up",
@@ -130,6 +133,31 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "saveHelperData",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -139,7 +167,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"password\"\r\n}"
+							"raw": "{\r\n    \"username\": \"test\",\r\n    \"password\": \"pouet\"\r\n}"
 						},
 						"url": {
 							"raw": "{{url}}/biblio/login",

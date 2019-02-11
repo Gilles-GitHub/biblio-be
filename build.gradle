@@ -1,13 +1,13 @@
 buildscript {
     ext {
-        kotlinVersion = '1.2.51'
-        springBootVersion = '2.0.5.RELEASE'
-        swaggerVersion = '2.0.5.RELEASE'
+        kotlinVersion = '1.2.71'
+        springBootVersion = '2.1.1.RELEASE'
+        swaggerVersion = '2.1.1.RELEASE'
     }
     repositories {
 //        jcenter()
 //        mavenCentral()
-        maven { url "http://nexus.airfrance.fr/nexus/repository/central/"}
+        maven { url "http://nexus.airfrance.fr/nexus/repository/maven-central/"}
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
@@ -41,11 +41,10 @@ compileTestKotlin {
 repositories {
 //    jcenter()
 //    mavenCentral()
-    maven { url "http://nexus.airfrance.fr/nexus/repository/central/"}
+    maven { url "http://nexus.airfrance.fr/nexus/repository/maven-central/"}
 }
 
 dependencies {
-    compile('com.beust:klaxon:3.0.8')
     compile('com.google.guava:guava:26.0-jre')
     compile('io.jsonwebtoken:jjwt:0.9.1')
     compile('io.springfox:springfox-swagger-ui:2.9.2')
@@ -63,7 +62,6 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-validation')
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.security:spring-security-jwt')
     compileOnly('org.springframework.boot:spring-boot-configuration-processor')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }

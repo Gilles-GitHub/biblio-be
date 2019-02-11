@@ -17,14 +17,14 @@ class MongoConfig(private val environment: Environment) : AbstractMongoConfigura
     }
 
     override fun mongoClient(): MongoClient {
-        return MongoClient(environment.getProperty("spring.data.mongodb.host"), Integer.parseInt(environment.getProperty("spring.data.mongodb.port")!!))
+        return MongoClient(environment.getProperty("spring.data.mongodb.host")!!, Integer.parseInt(environment.getProperty("spring.data.mongodb.port")!!))
     }
 
     @Bean
     @Throws(Exception::class)
     override fun mappingMongoConverter(): MappingMongoConverter {
         val mappingMongoConverter = super.mappingMongoConverter()
-        mappingMongoConverter.typeMapper = null
+        mappingMongoConverter.setTypeMapper(null)
 
         return mappingMongoConverter
     }
