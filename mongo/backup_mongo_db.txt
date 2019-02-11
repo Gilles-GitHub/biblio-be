@@ -1,0 +1,2 @@
+Install NoSQLBooster for MongoDB
+Use the import functionality with the archive.gz
