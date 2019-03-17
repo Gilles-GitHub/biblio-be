@@ -8,11 +8,11 @@ server:
 #      org.springframework.security: INFO
 #      org.springframework.web: INFO
 
-application:
-  secret: SecretKeyToGenJWTs
-  authorization: Authorization
-  bearer: Bearer
-  access_token: access_token
+#application:
+#  secret: SecretKeyToGenJWTs
+#  authorization: Authorization
+#  bearer: Bearerx
+#  access_token: access_token
 
 spring:
   jackson:
@@ -22,7 +22,7 @@ spring:
       database: biblio
       host: localhost
       port: 27017
-  #  security:
-  #    user:
-  #      password: test
-  #      name: test
+  security:
+    user:
+      password: test
+      name: test

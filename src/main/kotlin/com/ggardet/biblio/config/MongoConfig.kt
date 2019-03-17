@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.convert.MappingMongoConverter
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories
 
 @Configuration
-@EnableMongoRepositories(basePackages = ["com.ggardet.biblio.repository", "com.ggardet.biblio.security.repository"])
+@EnableMongoRepositories(basePackages = ["com.ggardet.biblio.repository"])
 class MongoConfig(private val environment: Environment) : AbstractMongoConfiguration() {
 
     override fun getDatabaseName(): String {
@@ -17,7 +17,8 @@ class MongoConfig(private val environment: Environment) : AbstractMongoConfigura
     }
 
     override fun mongoClient(): MongoClient {
-        return MongoClient(environment.getProperty("spring.data.mongodb.host")!!, Integer.parseInt(environment.getProperty("spring.data.mongodb.port")!!))
+        return MongoClient(environment.getProperty("spring.data.mongodb.host")!!,
+                Integer.parseInt(environment.getProperty("spring.data.mongodb.port")!!))
     }
 
     @Bean

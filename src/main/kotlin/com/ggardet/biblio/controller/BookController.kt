@@ -35,7 +35,6 @@ class BookController(var bookRepository: BookRepository) {
         return ResponseEntity.ok(response)
     }
 
-
     @ApiOperation(
             value = "Finds the book from its code identifier")
     @GetMapping("/books/{id}")

@@ -5,9 +5,9 @@ buildscript {
         swaggerVersion = '2.1.1.RELEASE'
     }
     repositories {
-//        jcenter()
-//        mavenCentral()
-        maven { url "http://nexus.airfrance.fr/nexus/repository/maven-central/"}
+        jcenter()
+        mavenCentral()
+//        maven { url "http://nexus.airfrance.fr/nexus/repository/maven-central/"}
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
@@ -39,9 +39,9 @@ compileTestKotlin {
 }
 
 repositories {
-//    jcenter()
-//    mavenCentral()
-    maven { url "http://nexus.airfrance.fr/nexus/repository/maven-central/"}
+    jcenter()
+    mavenCentral()
+//    maven { url "http://nexus.airfrance.fr/nexus/repository/maven-central/"}
 }
 
 dependencies {
