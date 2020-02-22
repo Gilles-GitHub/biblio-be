@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull
 @Component
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix = "application")
-open class YAMLConfig {
+class YAMLConfig {
 
     @NotNull lateinit var secret: String
     @NotNull lateinit var authorization: String

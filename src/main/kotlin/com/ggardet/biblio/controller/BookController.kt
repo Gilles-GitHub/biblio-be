@@ -23,11 +23,11 @@ class BookController(var bookRepository: BookRepository) {
 
     @ApiOperation(
             value = "Finds all the books of the collection",
-            notes = "Multiple status values can be provided with comma seperated strings")
+            notes = "Multiple status values can be provided with comma separated strings")
     @GetMapping("/books")
     fun getBooks(): ResponseEntity<List<BookEntity>> {
         logger.info("Provide all books")
-        var response: List<BookEntity> = bookRepository.findAll()
+        val response: List<BookEntity> = bookRepository.findAll()
         // add hateoas links for every book of the collection (get one)
         response.forEach { book -> book.add(ControllerLinkBuilder.linkTo(ControllerLinkBuilder.methodOn(BookController::class.java).getBook(book.id)).withRel("book")) }
         response.forEach { book -> book.add(ControllerLinkBuilder.linkTo(ControllerLinkBuilder.methodOn(BookController::class.java).getBook(book.id)).withSelfRel()) }
@@ -40,7 +40,7 @@ class BookController(var bookRepository: BookRepository) {
     @GetMapping("/books/{id}")
     fun getBook(@PathVariable("id") id: String): ResponseEntity<Optional<BookEntity>> {
         logger.info("Provide a book")
-        var book: Optional<BookEntity> = bookRepository.findById(id)
+        val book: Optional<BookEntity> = bookRepository.findById(id)
         book.get().add(ControllerLinkBuilder.linkTo(ControllerLinkBuilder.methodOn(BookController::class.java).getBook(book.get().id)).withRel("book"))
 
         return ResponseEntity.ok(book)
