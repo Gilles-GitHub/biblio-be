@@ -19,8 +19,9 @@ repositories {
 dependencies {
     implementation("com.google.guava:guava:26.0-jre")
     implementation("io.jsonwebtoken:jjwt:0.9.1")
-    implementation("org.springdoc:springdoc-openapi-core:1.1.44")
-    implementation("org.springdoc:springdoc-openapi-ui:1.1.44")
+    implementation("org.springdoc:springdoc-openapi-security:1.2.33")
+    implementation("org.springdoc:springdoc-openapi-kotlin:1.2.33")
+    implementation("org.springdoc:springdoc-openapi-ui:1.2.33")
     implementation("javax.persistence:javax.persistence-api:2.2")
     implementation("javax.xml.bind:jaxb-api:2.3.0")
     implementation("org.apache.commons:commons-lang3:3.4")
