@@ -52,6 +52,17 @@ class BookController(var bookRepository: BookRepository) {
     @PutMapping("/books/{id}")
     fun putBook(@PathVariable("id") id: String, @RequestBody request: BookEntity): ResponseEntity.HeadersBuilder<*> {
         logger.info("Update a book")
+        val bookEntity: Optional<BookEntity> = bookRepository.findById(id)
+        // fill the new properties values
+        bookEntity.map { book: BookEntity? ->
+            {
+                book?.authorFirstName = request.authorFirstName
+                book?.authorLastName = request.authorLastName
+                book?.genre = request.genre
+                book?.name = request.name
+                book?.publicationDate = request.publicationDate
+            }
+        }
         val response = bookRepository.save(request)
         // add hateoas link
         response.add(WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(BookController::class.java).getBook(response.id)).withRel("book"))

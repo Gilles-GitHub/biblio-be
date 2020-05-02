@@ -10,9 +10,9 @@ import java.util.*
 @Document(collection = "books")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 data class BookEntity(@Id @JsonProperty("_id") val id: String,
-                      @JsonProperty("firstName") val authorFirstName: String,
-                      @JsonProperty("lastName") val authorLastName: String,
-                      @JsonProperty("bookName") val name: String,
+                      @JsonProperty("firstName") var authorFirstName: String,
+                      @JsonProperty("lastName") var authorLastName: String,
+                      @JsonProperty("bookName") var name: String,
                       val addedDate: Date,
-                      val genre: String,
-                      val publicationDate: Date): RepresentationModel<BookEntity>()
+                      var genre: String,
+                      var publicationDate: Date): RepresentationModel<BookEntity>()
