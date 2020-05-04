@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
-import org.springframework.hateoas.RepresentationModel
 import java.util.*
 
 @Document(collection = "books")
@@ -15,4 +14,4 @@ data class BookEntity(@Id @JsonProperty("_id") val id: String,
                       @JsonProperty("bookName") var name: String,
                       val addedDate: Date,
                       var genre: String,
-                      var publicationDate: Date): RepresentationModel<BookEntity>()
+                      var publicationDate: Date)
