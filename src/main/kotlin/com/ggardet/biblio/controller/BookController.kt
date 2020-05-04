@@ -20,6 +20,8 @@ class BookController(val bookRepository: BookRepository, val bookMapper: BookMap
 
     /**
      * Provide all books of the collection all books
+     *
+     * @return the list of books present in the collection
      */
     @ApiResponses(value = [ApiResponse(responseCode = "200", description = "Finds all the books of the collection")])
     @GetMapping("/books")
@@ -33,6 +35,7 @@ class BookController(val bookRepository: BookRepository, val bookMapper: BookMap
      * Provide a book from the collection
      *
      * @param id the book identifier
+     * @return the book related to the given identifier
      */
     @ApiResponses(value = [ApiResponse(responseCode = "200", description = "Finds the book from its code identifier")])
     @GetMapping("/books/{id}")
@@ -46,6 +49,7 @@ class BookController(val bookRepository: BookRepository, val bookMapper: BookMap
      * Insert a book into the collection
      *
      * @param request the HTTP request body
+     * @return the updated book related to the given identifier
      */
     @ApiResponses(value = [ApiResponse(responseCode = "200", description = "Create a book")])
     @PostMapping("/books")
