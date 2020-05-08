@@ -53,9 +53,11 @@ class BookController(val bookRepository: BookRepository, val bookMapper: BookMap
      */
     @ApiResponses(value = [ApiResponse(responseCode = "200", description = "Create a book")])
     @PostMapping("/books")
-    fun postBook(@RequestBody request: BookEntity): ResponseEntity<BookEntity> {
+    fun postBook(@RequestBody request: Book): ResponseEntity<BookEntity> {
         logger.info("Insert a book into the collection")
-        val response: BookEntity = bookRepository.save(request)
+        val bookEntity = BookEntity()
+        bookMapper.mapRequestToEntity(bookEntity, request)
+        val response: BookEntity = bookRepository.save(bookEntity)
         return ResponseEntity.ok(response)
     }
 
