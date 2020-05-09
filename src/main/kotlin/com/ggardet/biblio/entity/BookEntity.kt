@@ -9,12 +9,12 @@ import java.util.*
 
 @Document(collection = "books")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-data class BookEntity(@Id @JsonProperty("_id") val id: String,
+data class BookEntity(@Id @JsonProperty("_id") val id: String?,
                       @JsonProperty("firstName") var authorFirstName: String,
                       @JsonProperty("lastName") var authorLastName: String,
                       @JsonProperty("bookName") var name: String,
                       val addedDate: Date,
                       var genre: String,
                       var publicationDate: Date) {
-    constructor() : this(StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, Date(), StringUtils.EMPTY, Date())
+    constructor() : this(null, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, Date(), StringUtils.EMPTY, Date())
 }

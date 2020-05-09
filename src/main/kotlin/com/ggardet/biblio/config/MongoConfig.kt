@@ -30,8 +30,8 @@ class MongoConfig(private val environment: Environment) : AbstractMongoClientCon
     }
 
     override fun mongoClient(): MongoClient {
-        val host = environment.getProperty("spring.data.mongodb.host")!!
-        val port = environment.getProperty("spring.data.mongodb.port")!!
+        val host = environment.getProperty("spring.data.mongodb.host").orEmpty()
+        val port = environment.getProperty("spring.data.mongodb.port").orEmpty()
         val serverAddress = ServerAddress(host, Integer.parseInt(port))
         val clusterSettings = ClusterSettings.builder().hosts(arrayListOf(serverAddress)).build()
         val mongoClientSettings = MongoClientSettings.builder().applyToClusterSettings { t -> t.applySettings(clusterSettings) }.build()
@@ -39,25 +39,13 @@ class MongoConfig(private val environment: Environment) : AbstractMongoClientCon
     }
 
     @Bean
-    @Throws(Exception::class)
-    override fun mappingMongoConverter(): MappingMongoConverter {
-        val mappingMongoConverter = super.mappingMongoConverter()
-        mappingMongoConverter.setTypeMapper(null)
-        return mappingMongoConverter
-    }
-
-    @Bean
-    fun mappingMongoConverter(factory: MongoDbFactory?, context: MongoMappingContext?, beanFactory: BeanFactory): MappingMongoConverter? {
-        val dbRefResolver: DbRefResolver = DefaultDbRefResolver(factory!!)
-        val mappingConverter = MappingMongoConverter(dbRefResolver, context!!)
+    @Throws(NoSuchBeanDefinitionException::class)
+    fun mappingMongoConverter(mongoDbFactory: MongoDbFactory?, mongoMappingContext: MongoMappingContext?, beanFactory: BeanFactory): MappingMongoConverter? {
+        val dbRefResolver: DbRefResolver = DefaultDbRefResolver(mongoDbFactory!!)
+        val mappingMongoConverter = MappingMongoConverter(dbRefResolver, mongoMappingContext!!)
         // remove _class field from properties of a saved document
-        mappingConverter.setTypeMapper(DefaultMongoTypeMapper(null))
-        try {
-            mappingConverter.setCustomConversions(beanFactory.getBean(CustomConversions::class.java))
-        } catch (ex: NoSuchBeanDefinitionException) {
-            println(ex)
-        }
-        return mappingConverter
+        mappingMongoConverter.setTypeMapper(DefaultMongoTypeMapper(null))
+        return mappingMongoConverter
     }
 
 }

@@ -57,7 +57,7 @@ class BookController(val bookRepository: BookRepository, val bookMapper: BookMap
         logger.info("Insert a book into the collection")
         val bookEntity = BookEntity()
         bookMapper.mapRequestToEntity(bookEntity, request)
-        val response: BookEntity = bookRepository.save(bookEntity)
+        val response: BookEntity = bookRepository.insert(bookEntity)
         return ResponseEntity.ok(response)
     }
 
