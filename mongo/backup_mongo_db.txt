@@ -1,2 +1,7 @@
 - Install NoSQLBooster for MongoDB or NoSQLClient (https://github.com/nosqlclient/nosqlclient)
 - Use the import functionality with the backup/archive.gz or the biblio files
+
+or
+
+- Install Compass
+- On a document click on import json and use backup.json file

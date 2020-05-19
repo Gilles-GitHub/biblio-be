@@ -1,0 +1,301 @@
+[{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0b9"
+  },
+  "authorFirstName": "Boris",
+  "authorLastName": "Vian",
+  "name": "L'écume des jours",
+  "addedDate": {
+    "$date": "2017-08-08T20:07:20.201Z"
+  },
+  "genre": "Roman",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-694310400000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0ba"
+  },
+  "authorFirstName": "Boris",
+  "authorLastName": "Vian",
+  "name": "J'irai cracher sur vos tombes",
+  "addedDate": {
+    "$date": "2017-06-12T18:11:20.201Z"
+  },
+  "genre": "Roman policier",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-757382400000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0bb"
+  },
+  "authorFirstName": "Louis-Ferdinand",
+  "authorLastName": "Céline",
+  "name": "Voyage ou bout de la nuit",
+  "addedDate": {
+    "$date": "2016-04-15T16:14:20.201Z"
+  },
+  "genre": "Roman",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-1199228320807"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0bc"
+  },
+  "authorFirstName": "Alexandre",
+  "authorLastName": "Dumas",
+  "name": "Le compte de Monte-Cristo",
+  "addedDate": {
+    "$date": "2018-06-06T18:05:20.201Z"
+  },
+  "genre": "Roman historique",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-3976210721816"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0bd"
+  },
+  "authorFirstName": "J. D.",
+  "authorLastName": "Salinger",
+  "name": "L'attrape-coeurs",
+  "addedDate": {
+    "$date": "2018-08-18T20:17:20.201Z"
+  },
+  "genre": "Roman",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-599612320805"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0be"
+  },
+  "authorFirstName": "William",
+  "authorLastName": "Golding",
+  "name": "Sa Majesté des mouches",
+  "addedDate": {
+    "$date": "2017-06-12T18:11:20.201Z"
+  },
+  "genre": "Roman",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-504917920805"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0bf"
+  },
+  "authorFirstName": "Anthony",
+  "authorLastName": "Burgess",
+  "name": "L'orange mécanique",
+  "addedDate": {
+    "$date": "2017-06-05T18:04:20.201Z"
+  },
+  "genre": "Roman de science fiction",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-252457120804"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c0"
+  },
+  "authorFirstName": "Stephen",
+  "authorLastName": "King",
+  "name": "Ça",
+  "addedDate": {
+    "$date": "2016-07-17T19:16:20.201Z"
+  },
+  "genre": "Roman horreur",
+  "publicationDate": {
+    "$date": "1990-01-01T01:01:19.199Z"
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c1"
+  },
+  "authorFirstName": "Stephen",
+  "authorLastName": "King",
+  "name": "Shinning",
+  "addedDate": {
+    "$date": "2017-11-13T23:12:20.201Z"
+  },
+  "genre": "Roman horreur",
+  "publicationDate": {
+    "$date": "1977-01-01T01:01:19.197Z"
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c2"
+  },
+  "authorFirstName": "Hervé",
+  "authorLastName": "Bazin",
+  "name": "Vipère au poing",
+  "addedDate": {
+    "$date": "2011-10-11T22:10:20.201Z"
+  },
+  "genre": "Roman autobiographique",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-694306720806"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c3"
+  },
+  "authorFirstName": "Romain",
+  "authorLastName": "Gary",
+  "name": "La promesse de l'ombre",
+  "addedDate": {
+    "$date": "2014-05-28T17:27:20.201Z"
+  },
+  "genre": "Roman autobiographique",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-315615520804"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c4"
+  },
+  "authorFirstName": "Alphonse",
+  "authorLastName": "Daudet",
+  "name": "Le petit chose",
+  "addedDate": {
+    "$date": "2011-03-21T15:20:20.201Z"
+  },
+  "genre": "Roman autobiographique",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-3218828321814"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c5"
+  },
+  "authorFirstName": "George",
+  "authorLastName": "Sand",
+  "name": "La marre au diable",
+  "addedDate": {
+    "$date": "2012-09-10T21:09:20.201Z"
+  },
+  "genre": "Roman autobiographique",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-3913052321816"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c6"
+  },
+  "authorFirstName": "Charles",
+  "authorLastName": "Baudelaire",
+  "name": "Les fleurs du mal",
+  "addedDate": {
+    "$date": "2016-01-10T13:09:20.201Z"
+  },
+  "genre": "Recueil de poêmes",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-3565897121815"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c7"
+  },
+  "authorFirstName": "Nicolas",
+  "authorLastName": "Gogol",
+  "name": "Journal d'un fou",
+  "addedDate": {
+    "$date": "2015-04-16T16:15:20.201Z"
+  },
+  "genre": "Nouvelle",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-4260207521817"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c8"
+  },
+  "authorFirstName": "Fedor",
+  "authorLastName": "Dostoïevski",
+  "name": "Les frères Karamazov",
+  "addedDate": {
+    "$date": "2013-02-10T14:09:20.201Z"
+  },
+  "genre": "Nouvelle",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-2871673121813"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0c9"
+  },
+  "authorFirstName": "Guy",
+  "authorLastName": "De Maupassant",
+  "name": "Boule de suif",
+  "addedDate": {
+    "$date": "2017-05-17T17:16:20.201Z"
+  },
+  "genre": "Nouvelle",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-2840137121812"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5bad2b6c6ae2e06819e5b0ca"
+  },
+  "authorFirstName": "Gustave",
+  "authorLastName": "Flaubert",
+  "name": "Madame Bovary",
+  "addedDate": {
+    "$date": "2017-03-19T15:18:20.201Z"
+  },
+  "genre": "Roman",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-3565897121815"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5eb6beae651c09404726f03a"
+  },
+  "authorFirstName": "t",
+  "authorLastName": "t",
+  "name": "t",
+  "addedDate": {
+    "$date": "2020-05-09T14:31:04.248Z"
+  },
+  "genre": "Nouvelle",
+  "publicationDate": {
+    "$date": {
+      "$numberLong": "-27106876800000"
+    }
+  }
+}]
