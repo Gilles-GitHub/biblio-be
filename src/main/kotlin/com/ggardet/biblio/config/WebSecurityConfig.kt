@@ -5,6 +5,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository
 
+
 @Configuration
 class WebSecurityConfig : WebSecurityConfigurerAdapter() {
 
@@ -13,11 +14,9 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
      */
     @Throws(Exception::class)
     override fun configure(httpSecurity: HttpSecurity) {
-        httpSecurity
-                .httpBasic()
-                .and()
-                .csrf()
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+        httpSecurity.cors().and()
+                .httpBasic().and()
+                .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
     }
 
 }

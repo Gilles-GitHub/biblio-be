@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import javax.persistence.EntityNotFoundException
 
-@CrossOrigin(origins = ["http://localhost:4200"], maxAge = 3600)
+@CrossOrigin(origins = ["http://localhost:4200", "http://192.168.99.100:4200"], maxAge = 3600)
 @RestController
 class BookController(val bookRepository: BookRepository, val bookMapper: BookMapper) {
 
